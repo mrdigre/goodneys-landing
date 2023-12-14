@@ -5,11 +5,14 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-moon-landing.netlify.app/",
+  site: "https://www.goodneys.com",
   integrations: [tailwind(), react()],
   vite: {
     ssr: {
       external: ["svgo"]
     }
-  }
+  },
+  buildOptions: {
+    baseUrl: "https://www.goodneys.com", 
+  },
 });
