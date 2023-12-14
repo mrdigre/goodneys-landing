@@ -1,0 +1,67 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+import type { FeatureItem } from "~/types";
+
+const features: Array<FeatureItem> = [
+  {
+    title: "Product Development",
+    description:
+      "We conceive, create, and bring innovative products to market through strategic design, development, and commercialization.",
+    icon: "mdi:feather",
+  },
+  {
+    title: "Trust your brand with us",
+    description:
+      "We strategically distribute and resell products across various retail marketplaces, upholding your brand integrity, enforcing pricing policies, and delivering top-tier customer service.",
+    icon: "mdi:handshake",
+  },
+  {
+    title: "Empowering B2B Success",
+    description:
+      "Empowering B2B Success: Unlocking Opportunities through Our Wholesale Product Offerings. Partner with us for seamless access to quality goods at competitive wholesale prices, tailored to meet your business needs.",
+    icon: "mdi:tag-multiple",
+  },
+  {
+    title: "Strategic Logistics Hub in Miami:",
+    description:
+      "Elevate Your Operations with Our Comprehensive Distribution and Warehousing Services. Seamlessly manage your inventory, streamline logistics, and optimize supply chains with our warehousing solutions.",
+    icon: "mdi:truck",
+  },
+  {
+    title: "Strategic Product Positioning",
+    description:
+      "Elevate Your Brand with Proven Marketing Techniques. Harnessing the power of Amazon PPC, Walmart, and impactful social media strategies, we drive targeted campaigns to position your products for optimal visibility, engagement, and market success.",
+    icon: "mdi:magnify",
+  },
+  {
+    title: "Crafting Success",
+    description:
+      "Tailored Sales Growth Strategies for Market Triumph. Our expert team specializes in designing bespoke sales growth strategies, leveraging data-driven insights, market trends, and innovative approaches to propel your business to new heights of success.",
+    icon: "mdi:chart-line-variant",
+  },
+];
+---
+
+<ContentSection title="What we do" id="whatwedo">
+  <Fragment slot="lead">
+    End-to-End Excellence: From <span class="text-primary"> B2C </span> to <span class="text-primary"> B2B </span>. 
+    We Navigate the Entire Product Journey. 
+    Our comprehensive services span from 
+    concept and <span class="text-primary">development</span> to <span class="text-primary">strategic marketing</span>
+    and successful <span class="text-primary">commercialization</span> across diverse online marketplaces. 
+  </Fragment>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <Icon name={icon} />
+          </div>
+          <p class="text-center font-extrabold text-xl">{title}</p>
+          <p class="text-center text-offset text-sm">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

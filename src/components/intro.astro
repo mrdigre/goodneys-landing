@@ -1,31 +1,42 @@
 ---
+import { Image } from "astro:assets";
+import goodneysLogo from "~/assets/goodneys-logo.svg"
 import { Icon } from "astro-icon";
 import ContentSection from "~/components/content-section.astro";
 ---
 
-<ContentSection title="Just ship less" id="intro">
-  <Icon slot="eyebrow" name="logomark" class="h-32" />
+<ContentSection title="Empowering e-commerce excellence" id="about">
+  <div class="relative">
+  <Image
+        src={goodneysLogo}
+        class="h-22"
+        alt="Description of the logo"
+  />
+  </div>
+  
+  
   <Fragment slot="lead">
-    Astro is a new kind of site builder for the
-    <span class="text-primary">modern</span> web.
-    <span class="text-primary">Lightning-fast</span>
-     performance meets <span class="text-primary">powerful</span> developer
-    experience.
+    Since <span class="text-primary">2015</span> we 
+    <span class="text-primary">develop</span> and
+    <span class="text-primary">commercialize cool products</span> 
+    through different marketplaces providing <span class="text-primary">top-quallity customer service</span>
+    
   </Fragment>
-  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
-    <a
-      href="https://docs.astro.build/"
+  <div class="grid grid-cols-1 gap-2">
+    <!-- <a
+      href="#whatwedo"
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
     >
       <Icon pack="mdi" name="telescope" class="h-8" />
-      <span>Read the docs</span>
-    </a>
+      <span>Learn More</span>
+    </a> -->
     <a
-      href="https://astro.new/"
+      href="#contact"
       class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
     >
       <Icon pack="mdi" name="rocket" class="h-8" />
-      <span>Try it out</span>
+      <span>Contact Us!</span>
     </a>
   </div>
+  
 </ContentSection>
